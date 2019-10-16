@@ -39,6 +39,8 @@ namespace SnobbyBot
             client.OnUserLeft += client_OnUserLeft;
             client.OnJoinedChannel += client_OnJoinedChannel;
             client.OnLeftChannel += client_OnLeftChannel;
+            client.OnBeingHosted += client_OnBeingHosted;
+
 
             client.Connect();
 
@@ -70,6 +72,9 @@ namespace SnobbyBot
         {
             client.SendMessage(TwitchInfo.ChannelName, $"Get rekt bro");
         }
+
+        //User Banned in Chatroom
+        
 
         //SnobbyBot Message when joining channel
         private void client_OnJoinedChannel(object sender, OnJoinedChannelArgs e)
@@ -154,6 +159,14 @@ namespace SnobbyBot
             //TODO: Setup Logger System
             //Console.WriteLine(e.Data);
         }
+
+        //Hosted by another streamer
+        private void client_OnBeingHosted(object sender, OnBeingHostedArgs e)
+        {
+            client.SendMessage(TwitchInfo.ChannelName, $"Hey {e.BeingHostedNotification.HostedByChannel} thanks for the host!");
+        }
+
+
 
         //Disconnects SnobbyBot
         public void Disconnect()
