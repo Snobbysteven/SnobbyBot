@@ -1,2 +1,0 @@
-# SnobbyBot
-Twitch IRC Bot

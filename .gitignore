@@ -6,8 +6,6 @@
 *.user
 *.userosscache
 *.sln.docstates
-*.resx
-TwitchInfo.Designer.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -261,3 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/SnobbyBot/TwitchInfo.resx
